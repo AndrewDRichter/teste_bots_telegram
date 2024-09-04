@@ -27,6 +27,8 @@ def send_help(message):
 @bot.message_handler(func=lambda msg: True)
 def echo_all(message):
     print(message)
+    for item in message.values():
+        print(item)
     bot.reply_to(message, message.text)
 
 bot.infinity_polling()
